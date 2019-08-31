@@ -30,13 +30,6 @@ const Footer = () => (
       query FooterQuery {
         contentfulAbout {
           name
-          roles
-          socialLinks {
-            id
-            url
-            name
-            fontAwesomeIcon
-          }
         }
       }
     `}
@@ -48,7 +41,7 @@ const Footer = () => (
           <FooterContainer>
             <Fade left>
               <TextFooter fontSize={[2, 3]}>
-                <span>{`${name} Portfolio - Powered by `}</span>
+                <span>{`${name} - Powered by `}</span>
                 <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
                 <span> and </span>
                 <Link href="https://www.contentful.com/" mr={1}>
@@ -59,15 +52,6 @@ const Footer = () => (
                 </span>
               </TextFooter>
             </Fade>
-            <Flex>
-              <Fade right>
-                {socialLinks.map(({ id, ...rest }) => (
-                  <Box mx={[2, 3]} fontSize={[4, 5]} key={id}>
-                    <SocialLink {...rest} color="background" />
-                  </Box>
-                ))}
-              </Fade>
-            </Flex>
           </FooterContainer>
         </Box>
       );

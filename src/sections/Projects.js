@@ -107,9 +107,6 @@ const Project = ({
   name,
   description,
   projectUrl,
-  repositoryUrl,
-  type,
-  publishedDate,
   logo,
 }) => (
   <Card p={0}>
@@ -133,27 +130,13 @@ const Project = ({
               float: 'right',
             }}
           >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url={projectUrl}
-              />
-            </Box>
           </Flex>
           <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
-            {type}
+            <SocialLink
+                name="View project"
+                url={projectUrl}
+              >View Project</SocialLink>
           </ImageSubtitle>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
-          </Hide>
         </ProjectTag>
       </ImageContainer>
     </Flex>
@@ -164,9 +147,6 @@ Project.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  publishedDate: PropTypes.string.isRequired,
   logo: PropTypes.shape({
     image: PropTypes.shape({
       src: PropTypes.string,
@@ -177,7 +157,7 @@ Project.propTypes = {
 
 const Projects = () => (
   <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" icon="💻" label="notebook" />
+    <Section.Header name="Projects" label="notebook" />
     <StaticQuery
       query={graphql`
         query ProjectsQuery {
@@ -187,9 +167,6 @@ const Projects = () => (
               name
               description
               projectUrl
-              repositoryUrl
-              publishedDate(formatString: "YYYY")
-              type
               logo {
                 title
                 image: resize(width: 200, quality: 100) {
