@@ -35,6 +35,8 @@ const plugins = [
   },
   'gatsby-transformer-remark',
   'gatsby-plugin-offline',
+  'gatsby-transformer-sharp',
+  'gatsby-plugin-sharp',
 ];
 
 module.exports = client.getEntries().then(entries => {
