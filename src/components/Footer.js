@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { StaticQuery, graphql } from 'gatsby';
 import { Text, Box, Link, Flex } from 'rebass';
 import Fade from 'react-reveal/Fade';
-import SocialLink from './SocialLink';
 
 const FooterContainer = styled.footer`
   min-width: 320px;
@@ -34,22 +33,17 @@ const Footer = () => (
       }
     `}
     render={data => {
-      const { name, socialLinks } = data.contentfulAbout;
+      const { name } = data.contentfulAbout;
 
       return (
         <Box p={3} backgroundColor="primaryDark">
           <FooterContainer>
             <Fade left>
               <TextFooter fontSize={[2, 3]}>
-                <span>{`${name} - Powered by `}</span>
-                <Link href="https://www.gatsbyjs.org/">Gatsby</Link>
-                <span> and </span>
-                <Link href="https://www.contentful.com/" mr={1}>
-                  Contentful
+                <span>{`${name} - Proudly Powered by `}</span>
+                <Link href="https://www.tsokendesigns.com/">
+                  tsokén designs
                 </Link>
-                <span role="img" aria-label="heart">
-                  ❤️
-                </span>
               </TextFooter>
             </Fade>
           </FooterContainer>

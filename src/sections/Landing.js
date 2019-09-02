@@ -12,25 +12,25 @@ const Background = () => (
   <div>
     <Triangle
       color="backgroundDarkLanding"
-      height={['35vh', '80vh']}
-      width={['95vw', '60vw']}
+      height={['35vh', '40vh']}
+      width={['100vw', '60vw']}
     />
 
     <Triangle
       color="secondaryLanding"
-      height={['38vh', '80vh']}
-      width={['50vw', '35vw']}
+      height={['28vh', '40vh']}
+      width={['30vw', '25vw']}
     />
 
     <Triangle
       color="primaryDarkLanding"
-      height={['25vh', '35vh']}
+      height={['25vh', '20vh']}
       width={['75vw', '60vw']}
       invertX
     />
 
     <Triangle
-      color="backgroundDarkLanding"
+      color="backgroundDark"
       height={['20vh', '20vh']}
       width={['100vw', '100vw']}
       invertX

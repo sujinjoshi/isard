@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
-import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import Hide from '../components/Hide';
@@ -103,12 +102,7 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({
-  name,
-  description,
-  projectUrl,
-  logo,
-}) => (
+const Project = ({ name, description, projectUrl, logo }) => (
   <Card p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
@@ -129,14 +123,7 @@ const Project = ({
             style={{
               float: 'right',
             }}
-          >
-          </Flex>
-          <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
-            <SocialLink
-                name="View project"
-                url={projectUrl}
-              >View Project</SocialLink>
-          </ImageSubtitle>
+          ></Flex>
         </ProjectTag>
       </ImageContainer>
     </Flex>
